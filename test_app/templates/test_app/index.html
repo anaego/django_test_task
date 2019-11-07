@@ -1,0 +1,15 @@
+<form action="{% url 'test_app:task_2_1' %}" method="get">
+<input type="submit" value="2.1) Count of 'B' instances without related 'a'">
+</form>
+
+<form action="{% url 'test_app:task_2_2' %}" method="get">
+<input type="submit" value="2.2) 'A' queryset with 'b_count' field (amount of related 'B' instances)">
+</form>
+
+<form action="{% url 'test_app:task_2_3' %}" method="get">
+<input type="submit" value="2.3) 'A' queryset where any related 'b' has flag=True or without related 'b'">
+</form>
+
+<form action="{% url 'test_app:task_3' %}" method="get">
+<input type="submit" value="3) realize list view which return list of serialized 'B' instances with fields: 'id', 'text', 'a_name', 'a_id'.">
+</form>
