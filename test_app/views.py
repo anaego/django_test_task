@@ -1,4 +1,7 @@
-from django.db.models import Count, Q
+import json
+
+from django.core import serializers
+from django.db.models import Count, Q, F
 from django.shortcuts import render
 from django.views import generic
 from rest_framework.generics import ListAPIView
@@ -28,5 +31,5 @@ def task_2_3(request):
 
 
 class TaskThreeListView(ListAPIView):
-    queryset = B.objects.all()
+    queryset = B.objects.all().annotate(a_name=F('a__name')).values('id', 'text', 'a_name', 'a_id')
     serializer_class = BSerializer
