@@ -31,5 +31,5 @@ def task_2_3(request):
 
 
 class TaskThreeListView(ListAPIView):
-    queryset = B.objects.all().annotate(a_name=F('a__name')).values('id', 'text', 'a_name', 'a_id')
+    queryset = B.objects.all().annotate(a_name=F('a__name'))
     serializer_class = BSerializer
